@@ -11,10 +11,9 @@ public class ModeloConexion {
 	
 	private static String ID = "id_persona";
 	private static String NOMBRE = "nombre";
-	private static String APELLIDOS = "apellidos";
-	private static String TRABAJO = "trabajo";
+	private static String DESCRIPCION = "descripcion";
 	
-	private static String COLUMNAS[]={ID,NOMBRE,APELLIDOS,TRABAJO};
+	private static String COLUMNAS[]={ID,NOMBRE,DESCRIPCION};
 	
 	//CONEXION
 	Connection conexion=null;
@@ -34,8 +33,8 @@ public class ModeloConexion {
 			while(conjuntoResultados.next()){
 				System.out.print(conjuntoResultados.getInt(COLUMNAS[0])+" ");
 				System.out.print(conjuntoResultados.getString(COLUMNAS[1])+" ");
-				System.out.print(conjuntoResultados.getString(COLUMNAS[2])+" ");
-				System.out.println(conjuntoResultados.getString(COLUMNAS[3]));
+				System.out.println(conjuntoResultados.getString(COLUMNAS[2]));
+				
 			}
 		}
 		catch(SQLException sqlException){

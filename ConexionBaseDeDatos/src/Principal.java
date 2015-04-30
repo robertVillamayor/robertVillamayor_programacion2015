@@ -5,7 +5,7 @@ public class Principal {
 
 		ModeloConexion modelo;
 		ConexionDB conexion;
-		conexion = new ConexionDB("localhost","prueba","root","");
+		conexion = new ConexionDB("localhost","prueba","root","tonphp");
 		
 		if(conexion.conectDB()==true){
 			System.out.println("SE HA CONECTADO CON EXITO");

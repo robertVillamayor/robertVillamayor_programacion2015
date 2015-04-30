@@ -12,7 +12,7 @@ public class Principal {
 			modelo=new ModeloConexion(conexion.getConexion());
 			modelo.getPersonas();
 		}else{
-			System.out.println("ERROR EN LA CONEXION");
+			System.out.println("ERROR EN LA CONEXION, NO SE HA CONECTADO");
 		}
 		
 		

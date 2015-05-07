@@ -32,17 +32,17 @@ public class VistaNuevoMensajeIngles extends JPanel {
 		
 		
 		comboBoxCurso = new JComboBox();
-		comboBoxCurso.setToolTipText("CURSOS");
+		comboBoxCurso.setToolTipText("Courses");
 		comboBoxCurso.setBounds(45, 44, 102, 20);
 		add(comboBoxCurso);
 		
 		comboBoxClase = new JComboBox();
-		comboBoxClase.setToolTipText("Clase");
+		comboBoxClase.setToolTipText("Class");
 		comboBoxClase.setBounds(267, 44, 102, 20);
 		add(comboBoxClase);
 		
 		comboBoxAlumnos = new JComboBox();
-		comboBoxAlumnos.setToolTipText("Alumnos");
+		comboBoxAlumnos.setToolTipText("Students");
 		comboBoxAlumnos.setBounds(496, 44, 102, 20);
 		add(comboBoxAlumnos);
 		
@@ -51,7 +51,7 @@ public class VistaNuevoMensajeIngles extends JPanel {
 		add(jtextAsunto);
 		jtextAsunto.setColumns(10);
 		
-		labelAsunto = new JLabel("Asunto:");
+		labelAsunto = new JLabel("Business:");
 		labelAsunto.setFont(new Font("Tahoma", Font.BOLD, 15));
 		labelAsunto.setBounds(28, 113, 68, 14);
 		add(labelAsunto);
@@ -60,11 +60,11 @@ public class VistaNuevoMensajeIngles extends JPanel {
 		escribirMensaje.setBounds(28, 143, 570, 312);
 		add(escribirMensaje);
 		
-		botonEnviar = new JButton("Enviar");
+		botonEnviar = new JButton("Send");
 		botonEnviar.setBounds(651, 432, 89, 23);
 		add(botonEnviar);
 		
-		botonCancelar = new JButton("Cancelar");
+		botonCancelar = new JButton("Cancel");
 		botonCancelar.setBounds(651, 380, 89, 23);
 		add(botonCancelar);
 		

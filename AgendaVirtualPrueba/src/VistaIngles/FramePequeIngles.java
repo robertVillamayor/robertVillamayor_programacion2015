@@ -40,20 +40,15 @@ public class FramePequeIngles extends JFrame {
 	private JButton entrar;
 	private VistaMensajeAlumnoIngles alum;
 
-	
-
-	/**
-	 * Create the frame.
-	 */
 	public FramePequeIngles(FrameMedianoIngles med) {
 		
 		alum=new VistaMensajeAlumnoIngles(med);
 		
 		//Configuracion  ventana
-		setTitle("Agenda Virtual");
+		setTitle("Virtual Notebook");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(FramePequeIngles.class.getResource("/images/icono.png")));
 		
-			//Creamos y configuramos el contenedor de la ventana y sus componentes
+		//Creamos y configuramos el contenedor de la ventana y sus componentes
 		setBounds(100, 100, 370, 273);
 		contentPanePeq = new JPanel();
 		contentPanePeq.setMaximumSize(new Dimension(355, 235));
@@ -61,7 +56,7 @@ public class FramePequeIngles extends JFrame {
 		setContentPane(contentPanePeq);
 		contentPanePeq.setLayout(null);
 			
-				//etiqueta usuario y su caja, etiqueta password y su caja
+		//etiqueta usuario y su caja, etiqueta password y su caja
 		usuario = new JLabel("Usuario");
 		usuario.setBounds(48, 82, 101, 29);
 		usuario.setForeground(new Color(202, 91, 87));
@@ -87,7 +82,7 @@ public class FramePequeIngles extends JFrame {
 		cajaPassword.setBounds(169, 137, 149, 29);
 		contentPanePeq.add(cajaPassword);
 		
-				//Boton para login hacia mensajes padres
+		//Boton para login hacia mensajes padres
 		entrar = new JButton("Entrar");
 		entrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -95,8 +90,6 @@ public class FramePequeIngles extends JFrame {
 					if(datos.getConectado()){
 						med.cambiaContenedor(alum);
 						setVisible(false);
-				
-				
 			}
 			}
 		});
@@ -105,7 +98,7 @@ public class FramePequeIngles extends JFrame {
 		entrar.setBounds(217, 190, 95, 28);
 		contentPanePeq.add(entrar);
 		
-				//fondo contenedor
+		//fondo contenedor
 		fondo = new JLabel("");
 		fondo.setBounds(0, 0, 355, 235);
 		fondo.setIcon(new ImageIcon(FramePequeIngles.class.getResource("/images/molinillo.png")));

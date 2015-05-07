@@ -25,7 +25,7 @@ public class VistaMensajeAlumnoIngles extends JPanel {
 		private void crearLabelsDestinatario(){
 			int Y=134;
 	        for (int i=0;i<labelDestinatario.length;i++){
-	            labelDestinatario[i] = new JLabel("destinatario");
+	            labelDestinatario[i] = new JLabel("Addressee");
 	    		labelDestinatario[i].setFont(new Font("Rockwell", Font.PLAIN, 15));
 	            labelDestinatario[i].setBounds(69, Y, 100, 14);
 	    		add(labelDestinatario[i]);
@@ -36,7 +36,7 @@ public class VistaMensajeAlumnoIngles extends JPanel {
 		private void crearLabelsAsunto(){
 			int Y=134;
 	        for (int i=0;i<labelAsunto.length;i++){
-	        	labelAsunto[i] = new JLabel("asunto");
+	        	labelAsunto[i] = new JLabel("Business");
 	    		labelAsunto[i].setFont(new Font("Rockwell", Font.PLAIN, 15));
 	        	labelAsunto[i].setBounds(354, Y, 100, 14);
 	    		add(labelAsunto[i]);
@@ -47,7 +47,7 @@ public class VistaMensajeAlumnoIngles extends JPanel {
 		private void crearLabelsFecha(){
 			int Y=134;
 	        for (int i=0;i<labelFecha.length;i++){
-	        	labelFecha[i] = new JLabel("fecha");
+	        	labelFecha[i] = new JLabel("Date");
 	    		labelFecha[i].setFont(new Font("Rockwell", Font.PLAIN, 15));
 	        	labelFecha[i].setBounds(593, Y, 100, 14);
 	    		add(labelFecha[i]);
@@ -79,17 +79,17 @@ public class VistaMensajeAlumnoIngles extends JPanel {
 		crearLabelsFecha();
 		crearImagenBotonBorrar();
 
-		labelDestinatario0 = new JLabel("Recibido de:");
+		labelDestinatario0 = new JLabel("Received from:");
 		labelDestinatario0.setFont(new Font("Segoe Print", Font.BOLD, 19));
 		labelDestinatario0.setBounds(68, 97, 128, 31);
 		add(labelDestinatario0);
 		
-		labelAsunto0 = new JLabel("Asunto");
+		labelAsunto0 = new JLabel("Business");
 		labelAsunto0.setFont(new Font("Segoe Print", Font.BOLD, 19));
 		labelAsunto0.setBounds(354, 97, 94, 31);
 		add(labelAsunto0);
 		
-		labelFecha0 = new JLabel("Fecha Envio");
+		labelFecha0 = new JLabel("Shipping date");
 		labelFecha0.setFont(new Font("Segoe Print", Font.BOLD, 19));
 		labelFecha0.setBounds(593, 97, 128, 31);
 		add(labelFecha0);

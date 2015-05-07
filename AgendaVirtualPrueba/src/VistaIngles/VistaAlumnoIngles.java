@@ -14,6 +14,7 @@ import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
 
 import widgets.VistaCalendario;
+import widgets.VistaCalendarioIngles;
 
 import java.awt.Cursor;
 import java.awt.event.ActionListener;
@@ -23,7 +24,7 @@ public class VistaAlumnoIngles extends JPanel {
 
 	private JLabel foto, etiqAlum , nomAlum ,etiqConf, fondoAlum;
 	private JButton configuracion, bcalif, bMensajes ;
-	private VistaCalendario calendario;
+	private VistaCalendarioIngles calendario;
 	private FramePequeIngles peque;
 	private FrameMedianoIngles medi;
 	/**
@@ -49,7 +50,7 @@ public class VistaAlumnoIngles extends JPanel {
 		foto.setBounds(25, 28, 84, 92);
 		add(foto);
 		
-		etiqAlum = new JLabel("Alumno:");
+		etiqAlum = new JLabel("Student:");
 		etiqAlum.setFont(new Font("Segoe Print", etiqAlum.getFont().getStyle() | Font.BOLD, 18));
 		etiqAlum.setBounds(119, 39, 84, 14);
 		add(etiqAlum);
@@ -61,7 +62,7 @@ public class VistaAlumnoIngles extends JPanel {
 		
 				//Elementos contenedor: etiqueta y boton de configuracion
 		
-		etiqConf = new JLabel("Configuración");
+		etiqConf = new JLabel("Configuration");
 		etiqConf.setFont(new Font("Segoe Print", etiqConf.getFont().getStyle() | Font.BOLD, 18));
 		etiqConf.setBounds(161, 61, 135, 28);
 		add(etiqConf); 
@@ -74,14 +75,14 @@ public class VistaAlumnoIngles extends JPanel {
 		
 			//Elementos contenedor: Botones calificaciones y mensajes
 		
-		bcalif = new JButton("Calificaciones");
+		bcalif = new JButton("Qualifications");
 		bcalif.setFont(new Font("Segoe Print", bcalif.getFont().getStyle() | Font.BOLD, 16));
 		bcalif.setForeground(Color.BLUE);
 		bcalif.setIcon(null);
 		bcalif.setBounds(832, 43, 152, 33);
 		add(bcalif);
 		
-		bMensajes = new JButton("Mensajes");
+		bMensajes = new JButton("Posts");
 		//asigna accion al boton para que abra la vista pequeña (contraseña padres)
 		bMensajes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent pass) {
@@ -99,11 +100,11 @@ public class VistaAlumnoIngles extends JPanel {
 		
 		//añadimos calendario
 		
-				calendario= new VistaCalendario();
-				calendario.setBounds(100,131,800,398);
-				calendario.setOpaque(false);
-				this.add(calendario);
-		
+		calendario= new VistaCalendarioIngles();
+		calendario.setBounds(100,131,800,398);
+		calendario.setOpaque(false);
+		this.add(calendario);
+			
 		//fondo pantalla
 		fondoAlum = new JLabel("");
 		fondoAlum.setFont(new Font("Tahoma", Font.PLAIN, 18));

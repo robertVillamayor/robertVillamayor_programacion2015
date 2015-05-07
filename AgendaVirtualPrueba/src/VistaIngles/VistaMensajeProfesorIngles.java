@@ -32,7 +32,7 @@ public class VistaMensajeProfesorIngles extends JPanel{
 	private void crearLabelsDestinatario(){
 		int Y=134;
         for (int i=0;i<labelDestinatario.length;i++){
-            labelDestinatario[i] = new JLabel("hola");
+            labelDestinatario[i] = new JLabel("Hello");
     		labelDestinatario[i].setFont(new Font("Rockwell", Font.PLAIN, 15));
             labelDestinatario[i].setBounds(69, Y, 100, 14);
     		add(labelDestinatario[i]);
@@ -43,7 +43,7 @@ public class VistaMensajeProfesorIngles extends JPanel{
 	private void crearLabelsAsunto(){
 		int Y=134;
         for (int i=0;i<labelAsunto.length;i++){
-        	labelAsunto[i] = new JLabel("como");
+        	labelAsunto[i] = new JLabel("how are");
     		labelAsunto[i].setFont(new Font("Rockwell", Font.PLAIN, 15));
         	labelAsunto[i].setBounds(354, Y, 100, 14);
     		add(labelAsunto[i]);
@@ -54,7 +54,7 @@ public class VistaMensajeProfesorIngles extends JPanel{
 	private void crearLabelsFecha(){
 		int Y=134;
         for (int i=0;i<labelFecha.length;i++){
-        	labelFecha[i] = new JLabel("estas");
+        	labelFecha[i] = new JLabel("you");
     		labelFecha[i].setFont(new Font("Rockwell", Font.PLAIN, 15));
         	labelFecha[i].setBounds(593, Y, 100, 14);
     		add(labelFecha[i]);
@@ -89,22 +89,22 @@ public class VistaMensajeProfesorIngles extends JPanel{
 		crearLabelsFecha();
 		crearImagenBotonBorrar();
 
-		labelDestinatario0 = new JLabel("Destinatario");
+		labelDestinatario0 = new JLabel("Addressee");
 		labelDestinatario0.setFont(new Font("Segoe Print", Font.BOLD, 19));
 		labelDestinatario0.setBounds(68, 97, 128, 31);
 		add(labelDestinatario0);
 		
-		labelAsunto0 = new JLabel("Asunto");
+		labelAsunto0 = new JLabel("Business");
 		labelAsunto0.setFont(new Font("Segoe Print", Font.BOLD, 19));
 		labelAsunto0.setBounds(354, 97, 94, 31);
 		add(labelAsunto0);
 		
-		labelFecha0 = new JLabel("Fecha Envio");
+		labelFecha0 = new JLabel("Shipping date");
 		labelFecha0.setFont(new Font("Segoe Print", Font.BOLD, 19));
 		labelFecha0.setBounds(593, 97, 128, 31);
 		add(labelFecha0);
 		
-		botonNuevoMensaje = new JButton("Nuevo Mensaje");
+		botonNuevoMensaje = new JButton("New message");
 		botonNuevoMensaje.setBounds(593, 32, 169, 23);
 		add(botonNuevoMensaje);
 

@@ -12,12 +12,13 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import widgets.VistaCalendario;
+import widgets.VistaCalendarioIngles;
 
 public class VistaProfesorIngles extends JPanel {
 	
 	private JLabel fotoProf, etipProf, nomProf, etiqConf, fondo ;
 	private JButton configuracion, bTarea, bCalificaciones, bMensajes, bEvento ;
-	private VistaCalendario calendario;
+	private VistaCalendarioIngles calendario;
 	private FrameMedianoIngles mediano;
 	private VistaEventosIngles eventos;
 	private VistaTareasIngles tareas;
@@ -132,12 +133,12 @@ public class VistaProfesorIngles extends JPanel {
 		
 		//añadimos calendario
 		
-		calendario= new VistaCalendario();
+		calendario= new VistaCalendarioIngles();
 		calendario.setBounds(100,137,800,398);
 		calendario.setOpaque(false);
 		add(calendario);
 		
-				//fondo 
+		//fondo 
 		
 		fondo = new JLabel("");
 		fondo.setIcon(new ImageIcon(VistaProfesorIngles.class.getResource("/images/FONDO VISTAS3.png")));

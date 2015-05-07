@@ -26,19 +26,19 @@ public class VistaLeerMensajeIngles extends JPanel {
 		
 		this.vistamediana = vistamediana;
 
-		labelProfesor = new JLabel("Profesor:");
+		labelProfesor = new JLabel("Teacher:");
 		labelProfesor.setBounds(33, 51, 54, 14);
 		add(labelProfesor);
 		
-		labelClase = new JLabel("Clase:");
+		labelClase = new JLabel("Class:");
 		labelClase.setBounds(366, 51, 36, 14);
 		add(labelClase);
 		
-		labelCurso = new JLabel("Curso:");
+		labelCurso = new JLabel("Corse:");
 		labelCurso.setBounds(560, 51, 48, 14);
 		add(labelCurso);
 		
-		labelAsunto = new JLabel("Asunto:");
+		labelAsunto = new JLabel("Bussiness:");
 		labelAsunto.setBounds(33, 112, 46, 14);
 		add(labelAsunto);
 		
@@ -71,7 +71,7 @@ public class VistaLeerMensajeIngles extends JPanel {
 		textAreaMensaje.setBounds(97, 162, 654, 251);
 		add(textAreaMensaje);
 		
-		botonAtras = new JButton("Atr\u00E1s");
+		botonAtras = new JButton("Ago");
 		botonAtras.setBounds(662, 445, 89, 23);
 		add(botonAtras);
 		

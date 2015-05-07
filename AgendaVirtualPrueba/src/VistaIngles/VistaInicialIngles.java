@@ -29,14 +29,13 @@ public class VistaInicialIngles extends JPanel {
 	private JPasswordField logContraseña;
 	private JTextField logUsuario;
 	private JLabel logo, usuario, contraseña, fondoppal, seleccionaIdioma;
-	private JComboBox selecIdioma;
 	private JButton validaUser;
-	private JRadioButton userProf, userAlum;
-	private ButtonGroup grupo1;
+	private JRadioButton userProf, userAlum,español,ingles;
+	private ButtonGroup grupo1,grupo2;
 	/**
 	 * Create the panel.
 	 */
-	public VistaInicialIngles (VistaEspañol.FramePrincipal Frame1) {
+	public VistaInicialIngles (Vista.FramePrincipal Frame1) {
 		//generación y configuración ventana
 		
 		/*Icono y nombre en la ventana*/
@@ -62,23 +61,6 @@ public class VistaInicialIngles extends JPanel {
 		logo.setIcon(new ImageIcon(VistaInicialIngles.class.getResource("/images/logo.png")));
 		logo.setBounds(44, 31, 520, 284);
 		add(logo);
-		
-		selecIdioma = new JComboBox();
-		/*selecIdioma.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				String a=selecIdioma.getSelectedItem().toString();
-				if(a=="English"){
-					Frame1.cambiaPanelIncial();
-				
-				}
-			}
-		});*/
-		selecIdioma.setForeground(new Color(0, 102, 153));
-		selecIdioma.setFont(new Font("Segoe Print", selecIdioma.getFont().getStyle() | Font.BOLD, 18));
-		selecIdioma.setBounds(842, 71, 120, 27);
-		selecIdioma.addItem("Spanish");
-		selecIdioma.addItem("English");
-		add(selecIdioma);
 		
 		usuario = new JLabel("User");
 		usuario.setForeground(new Color(255, 75, 43));
@@ -114,12 +96,12 @@ public class VistaInicialIngles extends JPanel {
 				if(userAlum.isSelected()){
 					DatosUsuario datos =new DatosUsuario(logUsuario.getText(),logContraseña.getText(),"alumno");
 					if(datos.getConectado()){
-						Frame1.cambiaPanelAlumno();
+						Frame1.cambiaPanelAlumnoIngles();
 					}
 				}else if(userProf.isSelected()){
 					DatosUsuario datos =new DatosUsuario(logUsuario.getText(),logContraseña.getText(),"profesor");
 					if(datos.getConectado()){
-						Frame1.cambiaPanelProfesor();
+						Frame1.cambiaPanelProfesorIngles();
 					}
 				}else{
 						
@@ -156,11 +138,38 @@ public class VistaInicialIngles extends JPanel {
 		grupo1.add(userAlum);
 		grupo1.add(userProf);
 		
-		seleccionaIdioma = new JLabel("Selecciona un idioma :");
+		seleccionaIdioma = new JLabel("Choose your language :");
 		seleccionaIdioma.setForeground(Color.BLACK);
 		seleccionaIdioma.setFont(new Font("Arial", Font.BOLD, 15));
 		seleccionaIdioma.setBounds(832, 33, 168, 27);
 		add(seleccionaIdioma);
+		
+		español = new JRadioButton("Spanish");
+	    español.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent arg0) {
+	    		Frame1.cambiaPanelInicial2();
+	    		Frame1.setTitle("Agenda Virtual");
+	    	}
+	    });
+	    español.setBackground(SystemColor.activeCaptionBorder);
+	    español.setOpaque(false);
+		español.setBounds(832, 67, 109, 23);
+		add(español);
+		
+		ingles = new JRadioButton("English");
+		ingles.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				Frame1.cambiaPanelIncial();
+				Frame1.setTitle("Virtual Notebook");
+			}
+		});
+	    ingles.setBackground(SystemColor.activeCaptionBorder);
+	    ingles.setOpaque(false);
+		ingles.setBounds(832, 107, 109, 23);
+		add(ingles);
+		grupo2 = new ButtonGroup();
+		grupo2.add(español);
+		grupo2.add(ingles);
 		
 		
 		fondoppal = new JLabel("");

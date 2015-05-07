@@ -18,6 +18,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 
+import Vista.FramePrincipal;
 import modelo.DatosUsuario;
 
 import java.awt.event.ActionListener;
@@ -29,15 +30,13 @@ public class VistaInicial extends JPanel {
 	private JPasswordField logContraseña;
 	private JTextField logUsuario;
 	private JLabel logo, usuario, contraseña, fondoppal, seleccionaIdioma;
-	private JComboBox selecIdioma;
 	private JButton validaUser;
-	private JRadioButton userProf, userAlum;
-	private ButtonGroup grupo1;
+	private JRadioButton userProf, userAlum, español, ingles;
+	private ButtonGroup grupo1,grupo2;
 	private VistaIngles.VistaInicialIngles inicialIngles;
 	private VistaIngles.VistaProfesorIngles profesorIngles;
-	/**
-	 * Create the panel.
-	 */
+	
+	
 	public VistaInicial(FramePrincipal Frame1) {
 	
 		inicialIngles=new VistaIngles.VistaInicialIngles(Frame1);
@@ -63,23 +62,6 @@ public class VistaInicial extends JPanel {
 		logo.setIcon(new ImageIcon(VistaInicial.class.getResource("/images/logo.png")));
 		logo.setBounds(44, 31, 520, 284);
 		add(logo);
-		
-		selecIdioma = new JComboBox();
-		/*selecIdioma.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				String a=selecIdioma.getSelectedItem().toString();
-				if(a=="Español"){
-					Frame1.cambiaPanelProfesor();
-				
-				}
-			}
-		});*/
-		selecIdioma.setForeground(new Color(0, 102, 153));
-		selecIdioma.setFont(new Font("Segoe Print", selecIdioma.getFont().getStyle() | Font.BOLD, 18));
-		selecIdioma.setBounds(842, 71, 120, 27);
-		selecIdioma.addItem("Español");
-		selecIdioma.addItem("Ingles");
-		add(selecIdioma);
 		
 		usuario = new JLabel("Usuario");
 		usuario.setForeground(new Color(255, 75, 43));
@@ -163,11 +145,42 @@ public class VistaInicial extends JPanel {
 		seleccionaIdioma.setBounds(832, 33, 168, 27);
 		add(seleccionaIdioma);
 		
+	    español = new JRadioButton("Espa\u00F1ol");
+	    español.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent arg0) {
+	    		Frame1.cambiaPanelInicial2();
+	    		Frame1.setTitle("Agenda Virtual");
+	    	}
+	    });
+	    español.setBackground(SystemColor.activeCaptionBorder);
+	    español.setOpaque(false);
+		español.setBounds(832, 67, 109, 23);
+		add(español);
+		
+		ingles = new JRadioButton("Ingles");
+		ingles.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				Frame1.cambiaPanelIncial();
+				Frame1.setTitle("Virtual Notebook");
+			}
+		});
+	    ingles.setBackground(SystemColor.activeCaptionBorder);
+	    ingles.setOpaque(false);
+		ingles.setBounds(832, 107, 109, 23);
+		add(ingles);
+		grupo2 = new ButtonGroup();
+		grupo2.add(español);
+		grupo2.add(ingles);
+		
 		
 		fondoppal = new JLabel("");
 		fondoppal.setIcon(new ImageIcon(VistaInicial.class.getResource("/images/FONDO VISTAS.png")));
 		fondoppal.setBounds(0, 0, 1000, 600);
 		add( fondoppal);
+		
+	
+		
+	
 		
 
 	}

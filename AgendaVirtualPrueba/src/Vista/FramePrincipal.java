@@ -1,8 +1,12 @@
-package VistaEspañol;
+package Vista;
 
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
+
+import VistaEspañol.VistaAlumno;
+import VistaEspañol.VistaInicial;
+import VistaEspañol.VistaProfesor;
 
 public class FramePrincipal extends JFrame {
 
@@ -35,7 +39,7 @@ public class FramePrincipal extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		setBounds(100, 100, 1000, 600);
-		setContentPane(inicialIngles);
+		setContentPane(inicial);
 	}
 	
 	public void cambiaPanelAlumno(){
@@ -43,13 +47,23 @@ public class FramePrincipal extends JFrame {
 		this.setVisible(true);
 	}
 	public void cambiaPanelProfesor(){
-		this.remove(inicial);
 		setContentPane(profesor);
 		this.setVisible(true);
 	}
+	public void cambiaPanelProfesorIngles(){
+		setContentPane(profesorIngles);
+		this.setVisible(true);
+	}
+	public void cambiaPanelAlumnoIngles(){
+		setContentPane(alumnoIngles);
+		this.setVisible(true);
+	}
 	public void cambiaPanelIncial(){
-		this.setVisible(false);
 		setContentPane(inicialIngles);
+		this.setVisible(true);
+	}
+	public void cambiaPanelInicial2(){
+		setContentPane(inicial);
 		this.setVisible(true);
 	}
 

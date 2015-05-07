@@ -47,28 +47,28 @@ public class VistaEventosIngles extends JPanel {
 				curso = new JComboBox();
 				curso.setFont(new Font("Segoe Print", curso.getFont().getStyle() | Font.BOLD, 18));
 				curso.setBounds(102, 35, 125, 27);
-				curso.addItem ("Cursos");
+				curso.addItem ("Courses");
 				curso.setForeground(new Color(0, 102, 153));
 				add(curso);
 				
 				clase = new JComboBox();
 				clase.setFont(new Font("Segoe Print", clase.getFont().getStyle() | Font.BOLD, 18));
 				clase.setBounds(284, 35, 125, 27);
-				clase.addItem ("Clases");
+				clase.addItem ("Classes");
 				clase.setForeground(new Color(0, 102, 153));
 				add(clase);
 				
 				asignatura = new JComboBox();
 				asignatura.setFont(new Font("Segoe Print", asignatura.getFont().getStyle() | Font.BOLD, 15));
 				asignatura.setBounds(43, 84, 125, 27);
-				asignatura.addItem ("Asignaturas");
+				asignatura.addItem ("Subjects");
 				asignatura.setForeground(new Color(0, 102, 153));
 				add(asignatura);
 				
 				tipo = new JComboBox();
 				tipo.setFont(new Font("Segoe Print", tipo.getFont().getStyle() | Font.BOLD, 18));
 				tipo.setBounds(211, 83, 125, 27);
-				tipo.addItem ("Tipo");
+				tipo.addItem ("Type");
 				tipo.setForeground(new Color(0, 102, 153));
 				add(tipo);
 				
@@ -85,14 +85,14 @@ public class VistaEventosIngles extends JPanel {
 				add(asuntoTarea);
 				
 				//Boton para enviar la tarea
-				bEnviar = new JButton("Enviar");
+				bEnviar = new JButton("Send");
 				bEnviar.setFont(new Font("Segoe Print", bEnviar.getFont().getStyle() | Font.BOLD, 20));
 				bEnviar.setForeground(new Color(0, 102, 153));
 				bEnviar.setBounds(515, 440, 125, 27);
 				add(bEnviar);
 				
 				//Boton para cancelar la tarea
-				btnCancelar = new JButton("Cancelar");
+				btnCancelar = new JButton("Cancel");
 				btnCancelar.setFont(new Font("Segoe Print", btnCancelar.getFont().getStyle() | Font.BOLD, 20));
 				btnCancelar.setForeground(new Color(0, 102, 153));
 				btnCancelar.setBounds(650, 440, 125, 27);

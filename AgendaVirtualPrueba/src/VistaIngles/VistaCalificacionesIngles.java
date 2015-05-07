@@ -18,7 +18,7 @@ import com.toedter.calendar.JDateChooser;
 import javax.swing.ImageIcon;
 
 public class VistaCalificacionesIngles extends JPanel {
-	private JLabel fondo;
+	private JLabel fondo,lblCalificaciones;
 	private FrameMedianoIngles medi;
 	
 	/**
@@ -35,7 +35,7 @@ public class VistaCalificacionesIngles extends JPanel {
 				//fondo ventana
 			
 				
-				JLabel lblCalificaciones = new JLabel("CALIFICACIONES");
+				lblCalificaciones = new JLabel("QUALIFICATIONS");
 				lblCalificaciones.setFont(new Font("Tahoma", Font.BOLD, 64));
 				lblCalificaciones.setBackground(Color.BLACK);
 				lblCalificaciones.setBounds(52, 99, 637, 331);

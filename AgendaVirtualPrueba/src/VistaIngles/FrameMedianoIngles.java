@@ -36,7 +36,7 @@ public class FrameMedianoIngles extends JFrame {
 		contentPane.add(alumno,nombreVistaMensajeAlumno);
 		contentPane.add(leerMensaje, nombreVistaLeerMensaje);
 		
-		setTitle("Agenda Virtual");
+		setTitle("Virtual Notebook");
 		
 		}
 	

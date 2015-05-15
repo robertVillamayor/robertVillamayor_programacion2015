@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 public class Controladora {
 	private Modelo mod;
 	private Vista frame ;
+	
 	public Controladora ()
 	{
 		frame = new Vista(this);

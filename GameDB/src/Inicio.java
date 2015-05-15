@@ -7,6 +7,8 @@ public class Inicio {
 		
 		vista.VistaApp vista = new VistaApp();
 		vista.setVisible(true);
+		
+		
 	
 	}
 }

@@ -21,8 +21,8 @@ public class UsuariosModelo {
 		Statement instruccion=null;
 		ResultSet conjuntoResultados=null;
 		
-		public UsuariosModelo(Connection conexion) {
-			this.conexion=conexion;
+		public UsuariosModelo() {
+			conexion=ConexionDB.getConexion();
 			usuarios=new ArrayList<String>();
 		}
 		
@@ -45,7 +45,6 @@ public class UsuariosModelo {
 				try{
 					instruccion.close();
 					conjuntoResultados.close();
-					conexion.close();
 				}
 				catch(SQLException sqlException){
 					sqlException.printStackTrace();

@@ -28,6 +28,8 @@ public class VistaPrincipal extends JPanel {
 	private JLabel lblContrasea;
 	
 	private UsuariosModelo u;
+	
+	Connection conexion = null;
 
 	
 	public VistaPrincipal() {
@@ -57,12 +59,12 @@ public class VistaPrincipal extends JPanel {
 		add(comboBox);
 		
 		
-		/*u=new UsuariosModelo();
+		u=new UsuariosModelo();
 		
 		Iterator <String> it = u.getPersonas().iterator();
 		while(it.hasNext()){
 			comboBox.addItem((String)it.next());
-		}*/
+		}
 		
 		btnLogin = new JButton("Login");
 		btnLogin.setBounds(22, 285, 155, 23);

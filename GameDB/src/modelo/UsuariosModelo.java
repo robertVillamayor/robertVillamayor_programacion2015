@@ -10,7 +10,7 @@ public class UsuariosModelo {
 
 	//DEVOLVER CORREDORES
 		private static String LISTADO_NOMBRES = "select * from personas";
-		private static String NOMBRE = "nombre";
+		private static String NOMBRE = "nom";
 		private ArrayList<String> usuarios=null;
 		
 		private ConexionDB conex;
@@ -21,8 +21,8 @@ public class UsuariosModelo {
 		Statement instruccion=null;
 		ResultSet conjuntoResultados=null;
 		
-		public UsuariosModelo() {
-			conexion=conex.getConexion();
+		public UsuariosModelo(Connection conexion) {
+			this.conexion=conexion;
 			usuarios=new ArrayList<String>();
 		}
 		
@@ -45,6 +45,7 @@ public class UsuariosModelo {
 				try{
 					instruccion.close();
 					conjuntoResultados.close();
+					conexion.close();
 				}
 				catch(SQLException sqlException){
 					sqlException.printStackTrace();

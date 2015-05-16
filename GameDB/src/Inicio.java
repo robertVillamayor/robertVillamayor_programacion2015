@@ -7,7 +7,7 @@ public class Inicio {
 	public static void main(String[] args) {
 		
 		ConexionDB con;
-		con=new ConexionDB("localhost","prueba","root","");
+		con=new ConexionDB("localhost","proba","root","");
 		
 		if(con.conectDB()==true){
 			System.out.println("SE HA CONECTADO CON EXITO");

@@ -15,7 +15,7 @@ public class ConexionDB {
 		private String password;
 		
 		//CONEXION
-		private static Connection conexion = null; //MANEJA LA CONEXION
+		Connection conexion = null; //MANEJA LA CONEXION
 		
 		public ConexionDB(String host,String bbdd,String user,String password) {
 			
@@ -46,7 +46,7 @@ public class ConexionDB {
 			}
 
 		
-		public static Connection getConexion(){
-			return conexion;
+		public Connection getConexion(){
+			return this.conexion;
 		}
 }

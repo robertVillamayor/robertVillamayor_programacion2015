@@ -1,60 +1,99 @@
 package vista;
 
-import java.awt.CardLayout;
+import java.sql.Connection;
+import java.util.Iterator;
 
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+
+import modelo.UsuariosModelo;
 
 public class VistaPrincipal extends JPanel {
 	
-	private JPanel principal;
-	private JLabel foto;
+	private JLabel foto, lblPlataforma,lblGenero,lblNombre,label,lblNewLabel_1,lblNewLabel,lblFiltros;
 	private ImageIcon imagen;
-	private JTextField textField;
+	private JTextField textField,textField_1,textField_2,textField_3,textField_4;
+	private JButton btnJuegos,btnPerfil,btnLogin,btnRegistrar,btnEditar,btnSalvar;
+	private JComboBox comboBox;
+	private JScrollPane scrollPane;
+	private JList jlist;
+	private JComboBox comboBox_1,comboBox_2; 
+	private JLabel lblUsuario;
+	private JLabel lblContrasea;
+	
+	private UsuariosModelo u;
+
 	
 	public VistaPrincipal() {
-		setLayout(new CardLayout(0, 0));
 		
-		principal = new JPanel();
-		add(principal, "name_4470932519225");
-		principal.setLayout(null);
+
 		
 		imagen=new ImageIcon(VistaPrincipal.class.getResource("/Imagenes/foto.jpg.png"));
+		setLayout(null);
 		
 		foto = new JLabel("New label");
-		foto.setBounds(25, 27, 150, 131);
+		foto.setBounds(22, 21, 155, 147);
 		foto.setIcon(imagen);
-		principal.add(foto);
+		add(foto);
 		
-		JButton btnNewButton = new JButton("Juegos   >>");
-		btnNewButton.setBounds(278, 27, 171, 23);
-		principal.add(btnNewButton);
+	
 		
-		JButton btnPerfil = new JButton("Perfil  >>");
-		btnPerfil.setBounds(278, 61, 171, 23);
-		principal.add(btnPerfil);
+		btnJuegos = new JButton("Juegos   >>");
+		btnJuegos.setBounds(234, 34, 172, 23);
+		add(btnJuegos);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(25, 175, 150, 20);
-		principal.add(comboBox);
+		btnPerfil = new JButton("Perfil  >>");
+		btnPerfil.setBounds(234, 83, 172, 23);
+		add(btnPerfil);
+		
+		comboBox = new JComboBox();
+		comboBox.setBounds(22, 202, 155, 20);
+		add(comboBox);
+		
+		
+		u=new UsuariosModelo();
+		
+		Iterator <String> it = u.getPersonas().iterator();
+		while(it.hasNext()){
+			comboBox.addItem((String)it.next());
+		}
+		
+		btnLogin = new JButton("Login");
+		btnLogin.setBounds(22, 285, 155, 23);
+		add(btnLogin);
+		
+		btnRegistrar = new JButton("Registrar");
+		btnRegistrar.setBounds(22, 319, 155, 23);
+		add(btnRegistrar);
 		
 		textField = new JTextField();
-		textField.setBounds(25, 213, 150, 20);
-		principal.add(textField);
+		textField.setBounds(22, 254, 155, 20);
+		add(textField);
 		textField.setColumns(10);
 		
-		JButton btnNewButton_1 = new JButton("Login");
-		btnNewButton_1.setBounds(25, 253, 150, 23);
-		principal.add(btnNewButton_1);
+		lblUsuario = new JLabel("Usuario");
+		lblUsuario.setBounds(22, 179, 46, 14);
+		add(lblUsuario);
 		
-		JButton btnRegistrar = new JButton("Registrar");
-		btnRegistrar.setBounds(25, 287, 150, 23);
-		principal.add(btnRegistrar);
+		lblContrasea = new JLabel("Contrase\u00F1a");
+		lblContrasea.setBounds(22, 233, 88, 14);
+		add(lblContrasea);
+		
+		
 		
 		
 	}
+
+
+
+
+
+	
+	
 }

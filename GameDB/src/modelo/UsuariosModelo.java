@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class UsuariosModelo {
 
-	//DEVOLVER CORREDORES
+		//GENERAMOS LAS VARIABLES QUE NECESITAMOS
 		private static String LISTADO_NOMBRES = "select * from personas";
 		private static String NOMBRE = "nom";
 		private ArrayList<String> usuarios=null;
@@ -26,6 +26,7 @@ public class UsuariosModelo {
 			usuarios=new ArrayList<String>();
 		}
 		
+		//METODO QUE NOS DEVUELVE UN ARRAY LIST DE LA CONSULTA DE DATOS
 		public ArrayList getPersonas(){
 			try{
 				instruccion=conexion.createStatement();

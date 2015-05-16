@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConexionDB {
-	//DATOS DE LA CONEXION
+		//DATOS DE LA CONEXION
 		static final String CONTROLADOR_MYSQL="com.mysql.jdbc.Driver";
 		
 		//DATOS DE LA BASE DE DATOS
@@ -17,6 +17,7 @@ public class ConexionDB {
 		//CONEXION
 		static Connection conexion = null; //MANEJA LA CONEXION
 		
+		//CONSTRUCTOR
 		public ConexionDB(String host,String bbdd,String user,String password) {
 			
 			this.host=host;
@@ -25,6 +26,7 @@ public class ConexionDB {
 			this.password=password;
 		}
 		
+		//METODO QUE NOS DEVUELVE TRUE SI LA CONEXION HA SIDO CORRECTA Y FALSE SI HA HABIDO ALGUN FALLO
 		public boolean conectDB (){
 			try{
 				//LO PRIMERO ES CARGAR EL CONTROLADOR MYSQL EL CUAL AUTOMATICAMENTE SE REGISTRA
@@ -45,7 +47,7 @@ public class ConexionDB {
 			
 			}
 
-		
+		//GETTER PARA ACCEDER A LA CONEXION DESDE OTRA CLASE
 		public static Connection getConexion(){
 			return conexion;
 		}

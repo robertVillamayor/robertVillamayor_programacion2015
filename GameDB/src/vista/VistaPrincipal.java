@@ -16,6 +16,7 @@ import modelo.UsuariosModelo;
 
 public class VistaPrincipal extends JPanel {
 	
+	//DECLARAMOS LAS VARIABLES
 	private JLabel foto, lblPlataforma,lblGenero,lblNombre,label,lblNewLabel_1,lblNewLabel,lblFiltros;
 	private ImageIcon imagen;
 	private JTextField textField,textField_1,textField_2,textField_3,textField_4;
@@ -26,15 +27,12 @@ public class VistaPrincipal extends JPanel {
 	private JComboBox comboBox_1,comboBox_2; 
 	private JLabel lblUsuario;
 	private JLabel lblContrasea;
-	
 	private UsuariosModelo u;
 	
-	Connection conexion = null;
-
-	
+	//EN EL CONSTRUCTOR DE LA CLASE DISEÑAMOS EL CONTENEDOR CON LOS COMPONENTES
 	public VistaPrincipal() {
 		
-
+		u=new UsuariosModelo();
 		
 		imagen=new ImageIcon(VistaPrincipal.class.getResource("/Imagenes/foto.jpg.png"));
 		setLayout(null);
@@ -43,8 +41,6 @@ public class VistaPrincipal extends JPanel {
 		foto.setBounds(22, 21, 155, 147);
 		foto.setIcon(imagen);
 		add(foto);
-		
-	
 		
 		btnJuegos = new JButton("Juegos   >>");
 		btnJuegos.setBounds(234, 34, 172, 23);
@@ -58,9 +54,7 @@ public class VistaPrincipal extends JPanel {
 		comboBox.setBounds(22, 202, 155, 20);
 		add(comboBox);
 		
-		
-		u=new UsuariosModelo();
-		
+		//ACCION QUE ME RELLENA EL COMBOBOX CON LOS DATOS SELECCIONADOS DE LA BASE DE DATOS
 		Iterator <String> it = u.getPersonas().iterator();
 		while(it.hasNext()){
 			comboBox.addItem((String)it.next());
@@ -87,9 +81,11 @@ public class VistaPrincipal extends JPanel {
 		lblContrasea.setBounds(22, 233, 88, 14);
 		add(lblContrasea);
 		
-		
-		
-		
+	}
+
+	//GETTER PARA PODER ACCEDER A ESTE BOTON DESDE OTRA CLASE
+	public JButton getBtnJuegos() {
+		return btnJuegos;
 	}
 
 

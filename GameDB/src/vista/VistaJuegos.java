@@ -14,7 +14,8 @@ import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 
 public class VistaJuegos extends JPanel {
-
+	
+	//DECLARAMOS LAS VARIABLES
 	private JLabel  lblPlataforma,lblGenero,lblNombre,label,lblNewLabel_1,lblNewLabel,lblFiltros;
 	private JTextField textField_1,textField_2,textField_3,textField_4;
 	private JButton btnEditar,btnSalvar;
@@ -22,9 +23,11 @@ public class VistaJuegos extends JPanel {
 	private JList jlist;
 	private JComboBox comboBox_1,comboBox_2; 
 	
+	//EL CONSTRUCTOR DE LA CLASE DONDE DISEÑAMOS EL CONTENEDOR CON LOS COMPONENTES
 	public VistaJuegos() {
 
 		String datos[]={"Juuego1","Juego2","Juego3","Juego4","Juego seleccionado","Juego5","Juego6","Juego seleccionado","Juego de mierda","Juego7","Juego seleccionado"};
+		
 		setLayout(null);
 		
 		jlist=new JList(datos);

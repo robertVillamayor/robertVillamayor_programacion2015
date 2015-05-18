@@ -31,10 +31,10 @@ public class Principal extends JPanel {
 		comboBox.setBounds(28, 71, 153, 20);
 		add(comboBox);
 		
-		/*Iterator <Object> it = u.getPass().iterator();
+		Iterator <Object> it = u.getUsuarios().iterator();
 		while(it.hasNext()){
 			comboBox.addItem((Object)it.next());
-		}*/
+		}
 		
 		cajaContraseña = new JTextField();
 		cajaContraseña.setBounds(28, 139, 153, 20);

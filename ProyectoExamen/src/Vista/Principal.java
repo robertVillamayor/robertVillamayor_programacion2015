@@ -16,13 +16,13 @@ public class Principal extends JPanel {
 	private JComboBox comboBox;
 	private JButton botonLogin,botonLogout;
 	private JLabel lblUsuario,lblContrasea; 
-	private ModeloUsuarios u;
+	private ModeloUsuarios usuarios;
 
 
 	
 	public Principal() {
 		
-		u=new ModeloUsuarios();
+		usuarios=new ModeloUsuarios();
 
 		
 		setLayout(null);
@@ -31,7 +31,7 @@ public class Principal extends JPanel {
 		comboBox.setBounds(28, 71, 153, 20);
 		add(comboBox);
 		
-		Iterator <Object> it = u.getUsuarios().iterator();
+		Iterator <Object> it = usuarios.getUsuarios().iterator();
 		while(it.hasNext()){
 			comboBox.addItem((Object)it.next());
 		}

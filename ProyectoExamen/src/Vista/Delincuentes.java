@@ -2,41 +2,45 @@ package Vista;
 
 import java.awt.Component;
 import java.awt.Font;
+import java.util.ArrayList;
 import java.util.Iterator;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import javax.swing.ListModel;
 import javax.swing.ListSelectionModel;
 
-import Modelo.ModeloUsuarios;
+import Modelo.ModeloDelincuentes;
+
+import javax.swing.JComboBox;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Delincuentes extends JPanel {
 	
 	private JTextField cajaNombre,cajaEdad,cajaSexo,cajaNacionalidad,cajaDireccion,cajaPoblacion;
-	private JScrollPane scrollPane;
-	private JList jlist;
+	private JComboBox comboBox;
 	private JButton botonAntecedentes;
-	private JLabel lblSexo,lblEdad,lblDireccion,lblNacionalidad,lblNombre,lblPoblacion;
+	private JLabel lblSexo,lblEdad,lblDireccion,lblNacionalidad,lblNombre,lblPoblacion,lblNewLabel;
 	
 	private Principal principal;
 	private VistaApp vista;
 	private Antecedentes antecedentes;
+	
+	private ModeloDelincuentes delincuentes;
+	
+	
 
 	public Delincuentes() {
 		
+		delincuentes=new ModeloDelincuentes();
+		
 		setLayout(null);
-		
-		jlist=new JList();
-		jlist.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		jlist.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		
-		scrollPane= new JScrollPane(jlist);
-		scrollPane.setBounds(10, 11, 167, 304);
-		add(scrollPane);
 		
 		lblEdad = new JLabel("Edad");
 		lblEdad.setBounds(238, 67, 35, 14);
@@ -95,11 +99,32 @@ public class Delincuentes extends JPanel {
 		botonAntecedentes = new JButton("Antecedentes >>");
 		botonAntecedentes.setBounds(238, 292, 191, 23);
 		add(botonAntecedentes);
+		
+		lblNewLabel = new JLabel("Delincuentes");
+		lblNewLabel.setBounds(45, 23, 110, 14);
+		add(lblNewLabel);
+		
+		comboBox = new JComboBox();
+			Iterator <Object> it = delincuentes.getNombre().iterator();
+			while(it.hasNext()){
+				comboBox.addItem((Object)it.next());
+			}
+		/*comboBox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String delincuentes=comboBox.getSelectedItem().toString();
+				if(delincuentes=="David Alós"){
+					cajaNombre.setText();
+				}
+			}
+		});*/
+		comboBox.setBounds(27, 50, 110, 20);
+		add(comboBox);
+		
+		
 
 	}
 
 	public JButton getBotonAntecedentes() {
 		return botonAntecedentes;
 	}
-	
 }

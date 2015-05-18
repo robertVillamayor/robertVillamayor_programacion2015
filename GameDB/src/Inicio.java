@@ -1,4 +1,5 @@
 import modelo.ConexionDB;
+import modelo.UsuariosModelo;
 import vista.VistaApp;
 
 
@@ -8,7 +9,7 @@ public class Inicio {
 	public static void main(String[] args) {
 		
 		ConexionDB con;
-		con=new ConexionDB("localhost","proba","root","");
+		con=new ConexionDB("localhost","prueba","root","tonphp");
 		
 			if(con.conectDB()==true){
 				System.out.println("SE HA CONECTADO CON EXITO");

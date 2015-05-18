@@ -10,7 +10,7 @@ public class UsuariosModelo {
 
 		//GENERAMOS LAS VARIABLES QUE NECESITAMOS
 		private static String LISTADO_NOMBRES = "select * from personas";
-		private static String NOMBRE = "nom";
+		private static String NOMBRE = "nombre";
 		private ArrayList<String> usuarios=null;
 		
 		private ConexionDB conex;
@@ -35,6 +35,7 @@ public class UsuariosModelo {
 				//LISTAREMOS POR PANTALLA LOS DATOS
 				while(conjuntoResultados.next()){
 					usuarios.add(conjuntoResultados.getString(NOMBRE));
+					System.out.println(conjuntoResultados.getString(NOMBRE));
 				}
 				return usuarios;
 			}

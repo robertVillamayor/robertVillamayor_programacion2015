@@ -34,6 +34,8 @@ public class VistaJuegos extends JPanel {
 		jlist.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		jlist.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		
+		
+		
 		scrollPane= new JScrollPane(jlist);
 		scrollPane.setBounds(10, 100, 167, 224);
 		add(scrollPane);

@@ -18,6 +18,7 @@ import javax.swing.ListSelectionModel;
 import Modelo.ModeloDelincuentes;
 
 import javax.swing.JComboBox;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -105,15 +106,10 @@ public class Delincuentes extends JPanel {
 		add(lblNewLabel);
 		
 		comboBox = new JComboBox();
-		comboBox.addItem(delincuentes.getNombres());
-		/*comboBox.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				String delincuentes=comboBox.getSelectedItem().toString();
-				if(delincuentes=="David Alós"){
-					cajaNombre.setText();
-				}
+			Iterator <Object> it = delincuentes.getPersonas().iterator();
+			while(it.hasNext()){
+				comboBox.addItem((Object)it.next());
 			}
-		});*/
 		comboBox.setBounds(27, 50, 110, 20);
 		add(comboBox);
 		

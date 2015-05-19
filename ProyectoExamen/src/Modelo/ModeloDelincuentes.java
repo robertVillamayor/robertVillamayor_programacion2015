@@ -22,6 +22,7 @@ public class ModeloDelincuentes {
 		private ArrayList<String[]> datos;
 		private String nombreDatos [];
 		private String titulos[]={ID,NOMBRE,EDAD,SEXO,NACIONALIDAD,DIRECCION,POBLACION,ANTECEDENTES};
+		private ArrayList<Object> personas=null;
 		
 		private ConexionDB conex;
 
@@ -36,11 +37,12 @@ public class ModeloDelincuentes {
 			
 			String nombreDatos[]=new String[3];
 			conexion=ConexionDB.getConexion();
-					
+			personas=new ArrayList<Object>();
 			datos=new ArrayList<String[]>();
+			delin();
 		}
 		
-		//METODO QUE NOS DEVUELVE UN ARRAY LIST DE LA CONSULTA DE DATOS
+		//metodo que nos guarda los datos en un arrayList
 		public void delin(){
 			
 			try{
@@ -49,21 +51,14 @@ public class ModeloDelincuentes {
 				conjuntoResultados=instruccion.executeQuery(LISTADO_DELINCUENTES);
 				
 				
-				//LISTAREMOS POR PANTALLA LOS DATOS
-				int a=0;
 				while(conjuntoResultados.next()){
 					String x[]=new String[titulos.length];
 					
 						for(int f=0;f<titulos.length;f++){
 							x[f]=conjuntoResultados.getString(titulos[f]);
-							if(f==1){
-								nombreDatos[a]=conjuntoResultados.getString(titulos[f]);
-							}
-							
 						}
 						
 					datos.add(x);
-					a++;
 				}
 			}
 			catch(SQLException sqlException){
@@ -81,12 +76,37 @@ public class ModeloDelincuentes {
 			}
 		}
 		
+		public ArrayList getPersonas( ){
+			try{
+				instruccion=conexion.createStatement();
+				conjuntoResultados=instruccion.executeQuery(LISTADO_DELINCUENTES);
+				
+				//LISTAREMOS POR PANTALLA LOS DATOS
+				while(conjuntoResultados.next()){
+					personas.add(conjuntoResultados.getString(NOMBRE));
+				}
+				return personas;
+			}
+			catch(SQLException sqlException){
+				sqlException.printStackTrace();
+				return personas;
+			}
+			finally{
+				try{
+					instruccion.close();
+					conjuntoResultados.close();
+				}
+				catch(SQLException sqlException){
+					sqlException.printStackTrace();
+				}
+			}
+		}
+		
+		
+		
 		public String  getDatos(int x,int y){
 			return datos.get(x)[y];
 		}
 		
-		public String[] getNombres(){
-			return nombreDatos;
-		}
 
 }

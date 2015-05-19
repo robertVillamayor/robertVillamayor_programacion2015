@@ -105,10 +105,7 @@ public class Delincuentes extends JPanel {
 		add(lblNewLabel);
 		
 		comboBox = new JComboBox();
-			Iterator <Object> it = delincuentes.getNombre().iterator();
-			while(it.hasNext()){
-				comboBox.addItem((Object)it.next());
-			}
+		comboBox.addItem(delincuentes.getNombres());
 		/*comboBox.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String delincuentes=comboBox.getSelectedItem().toString();

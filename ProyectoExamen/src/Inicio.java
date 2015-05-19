@@ -14,8 +14,6 @@ public class Inicio {
 		
 			if(conexion.conectDB()==true){
 				System.out.println("Conectado con exito");
-				delincuentes = new ModeloDelincuentes();
-				delincuentes.getNombre();
 			}else{
 				System.out.println("error");
 			}

@@ -29,18 +29,15 @@ public class Delincuentes extends JPanel {
 	private JButton botonAntecedentes;
 	private JLabel lblSexo,lblEdad,lblDireccion,lblNacionalidad,lblNombre,lblPoblacion,lblNewLabel;
 	
-	private Principal principal;
-	private VistaApp vista;
-	private Antecedentes antecedentes;
-	
 	private ModeloDelincuentes delincuentes;
-	
+	private Antecedentes antecedentes;
 	
 
 	public Delincuentes() {
 		
 		delincuentes=new ModeloDelincuentes();
 		antecedentes=new Antecedentes();
+		
 		
 		setLayout(null);
 		
@@ -107,6 +104,7 @@ public class Delincuentes extends JPanel {
 		add(lblNewLabel);
 		
 		comboBox = new JComboBox();
+		comboBox.addItem("---------------------");
 			Iterator <Object> it = delincuentes.getPersonas().iterator();
 			while(it.hasNext()){
 				comboBox.addItem((Object)it.next());
@@ -115,7 +113,7 @@ public class Delincuentes extends JPanel {
 			comboBox.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					int a = comboBox.getSelectedIndex();
-					if(a==0){
+					if(a==1){
 						cajaNombre.repaint();
 						cajaNombre.setText(delincuentes.getDatos(0, 1));
 						cajaEdad.repaint();
@@ -128,8 +126,9 @@ public class Delincuentes extends JPanel {
 						cajaDireccion.setText(delincuentes.getDatos(0, 5));
 						cajaPoblacion.repaint();
 						cajaPoblacion.setText(delincuentes.getDatos(0, 6));
+						antecedentes.getCaja().setText("hola");
 					}
-					if(a==1){
+					if(a==2){
 						cajaNombre.repaint();
 						cajaNombre.setText(delincuentes.getDatos(1, 1));
 						cajaEdad.repaint();
@@ -143,7 +142,7 @@ public class Delincuentes extends JPanel {
 						cajaPoblacion.repaint();
 						cajaPoblacion.setText(delincuentes.getDatos(1, 6));
 					}
-					if(a==2){
+					if(a==3){
 						cajaNombre.repaint();
 						cajaNombre.setText(delincuentes.getDatos(2, 1));
 						cajaEdad.repaint();
@@ -157,6 +156,15 @@ public class Delincuentes extends JPanel {
 						cajaPoblacion.repaint();
 						cajaPoblacion.setText(delincuentes.getDatos(2, 6));
 					}
+					if(a==0){
+						cajaNombre.setText("");
+						cajaEdad.setText("");
+						cajaSexo.setText("");
+						cajaNacionalidad.setText("");
+						cajaDireccion.setText("");
+						cajaPoblacion.setText("");
+					}
+					
 				}
 			});	
 		comboBox.setBounds(27, 50, 110, 20);
@@ -169,4 +177,6 @@ public class Delincuentes extends JPanel {
 	public JButton getBotonAntecedentes() {
 		return botonAntecedentes;
 	}
+	
+
 }

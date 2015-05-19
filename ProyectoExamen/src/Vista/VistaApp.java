@@ -24,6 +24,7 @@ public class VistaApp extends JFrame {
 	private JPanel contentPane;
 	
 
+
 	public VistaApp() {
 		
 		contentPane=new JPanel();
@@ -79,6 +80,21 @@ public class VistaApp extends JFrame {
 		});
 		
 		setContentPane(contentPane);
+		
+		
 
+	}
+	public Principal getPrincipal() {
+		return principal;
+	}
+
+
+	public Delincuentes getDelincuentes() {
+		return delincuentes;
+	}
+
+
+	public Antecedentes getAntecedentes() {
+		return antecedentes;
 	}
 }

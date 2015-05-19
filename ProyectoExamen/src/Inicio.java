@@ -7,7 +7,7 @@ public class Inicio {
 
 	public static void main(String[] args) {
 		
-		ConexionDB conexion = new ConexionDB("localhost","delincuentes","root","");
+		ConexionDB conexion = new ConexionDB("localhost","delincuentes","root","tonphp");
 		
 		
 		

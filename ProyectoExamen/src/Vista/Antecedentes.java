@@ -16,6 +16,8 @@ public class Antecedentes extends JPanel {
 	private JLabel lblNewLabel ;
 	private JButton btnSalvar ;	
 	
+
+
 	public Antecedentes() {
 		setLayout(null);
 		
@@ -31,7 +33,8 @@ public class Antecedentes extends JPanel {
 		btnSalvar.setBounds(24, 285, 89, 23);
 		add(btnSalvar);
 		
-
-
+	}
+	public JTextArea getTextArea() {
+		return textArea;
 	}
 }

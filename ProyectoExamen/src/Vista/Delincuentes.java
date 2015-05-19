@@ -40,6 +40,7 @@ public class Delincuentes extends JPanel {
 	public Delincuentes() {
 		
 		delincuentes=new ModeloDelincuentes();
+		antecedentes=new Antecedentes();
 		
 		setLayout(null);
 		
@@ -110,6 +111,54 @@ public class Delincuentes extends JPanel {
 			while(it.hasNext()){
 				comboBox.addItem((Object)it.next());
 			}
+			
+			comboBox.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					int a = comboBox.getSelectedIndex();
+					if(a==0){
+						cajaNombre.repaint();
+						cajaNombre.setText(delincuentes.getDatos(0, 1));
+						cajaEdad.repaint();
+						cajaEdad.setText(delincuentes.getDatos(0, 2));
+						cajaSexo.repaint();
+						cajaSexo.setText(delincuentes.getDatos(0, 3));
+						cajaNacionalidad.repaint();
+						cajaNacionalidad.setText(delincuentes.getDatos(0, 4));
+						cajaDireccion.repaint();
+						cajaDireccion.setText(delincuentes.getDatos(0, 5));
+						cajaPoblacion.repaint();
+						cajaPoblacion.setText(delincuentes.getDatos(0, 6));
+					}
+					if(a==1){
+						cajaNombre.repaint();
+						cajaNombre.setText(delincuentes.getDatos(1, 1));
+						cajaEdad.repaint();
+						cajaEdad.setText(delincuentes.getDatos(1, 2));
+						cajaSexo.repaint();
+						cajaSexo.setText(delincuentes.getDatos(1, 3));
+						cajaNacionalidad.repaint();
+						cajaNacionalidad.setText(delincuentes.getDatos(1, 4));
+						cajaDireccion.repaint();
+						cajaDireccion.setText(delincuentes.getDatos(1, 5));
+						cajaPoblacion.repaint();
+						cajaPoblacion.setText(delincuentes.getDatos(1, 6));
+					}
+					if(a==2){
+						cajaNombre.repaint();
+						cajaNombre.setText(delincuentes.getDatos(2, 1));
+						cajaEdad.repaint();
+						cajaEdad.setText(delincuentes.getDatos(2, 2));
+						cajaSexo.repaint();
+						cajaSexo.setText(delincuentes.getDatos(2, 3));
+						cajaNacionalidad.repaint();
+						cajaNacionalidad.setText(delincuentes.getDatos(2, 4));
+						cajaDireccion.repaint();
+						cajaDireccion.setText(delincuentes.getDatos(2, 5));
+						cajaPoblacion.repaint();
+						cajaPoblacion.setText(delincuentes.getDatos(2, 6));
+					}
+				}
+			});	
 		comboBox.setBounds(27, 50, 110, 20);
 		add(comboBox);
 		

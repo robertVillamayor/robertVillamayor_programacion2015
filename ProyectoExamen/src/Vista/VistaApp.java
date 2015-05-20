@@ -9,6 +9,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -28,7 +30,7 @@ public class VistaApp extends JFrame {
 	public VistaApp() {
 		
 		contentPane=new JPanel();
-		principal=new Principal(this);
+		principal=new Principal();
 		delincuentes=new Delincuentes(this);
 		antecedentes=new Antecedentes();
 		
@@ -60,11 +62,18 @@ public class VistaApp extends JFrame {
 		mntmDelincuentes = new JMenuItem("Delincuentes");
 		mntmDelincuentes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				antecedentes.setVisible(false);
-				principal.setVisible(false);
-				contentPane.setVisible(false);
-				delincuentes.setVisible(true);
-				setContentPane(delincuentes);
+				if(principal.estaValidado()==true){
+					antecedentes.setVisible(false);
+					principal.setVisible(false);
+					contentPane.setVisible(false);
+					delincuentes.setVisible(true);
+					setContentPane(delincuentes);
+				}else{
+					Object[] options = { "OK", "CANCEL" };
+					JOptionPane.showOptionDialog(null, "Introduce contraseña", "ERROR",
+					JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE,
+					null, options, options[0]);
+				}
 			}
 		});
 		mnDelincuentes.add(mntmDelincuentes);

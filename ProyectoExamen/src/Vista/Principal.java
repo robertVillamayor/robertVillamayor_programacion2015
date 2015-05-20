@@ -23,7 +23,7 @@ public class Principal extends JPanel {
 
 	boolean validado=false;
 	
-	public Principal(VistaApp vista) {
+	public Principal() {
 		
 		usuarios=new ModeloUsuarios();
 
@@ -63,6 +63,7 @@ public class Principal extends JPanel {
 						JOptionPane.showOptionDialog(null, "Introduce contraseña", "ERROR",
 						JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE,
 						null, options, options[0]);
+						validado=false;
 					}
 				}
 				
@@ -78,6 +79,7 @@ public class Principal extends JPanel {
 						JOptionPane.showOptionDialog(null, "Introduce contraseña", "ERROR",
 						JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE,
 						null, options, options[0]);
+						validado=false;
 					}
 				}
 			}
@@ -92,6 +94,7 @@ public class Principal extends JPanel {
 				cajaContraseña.setText("");
 				botonLogin.setEnabled(true);
 				botonLogout.setEnabled(false);
+				validado=false;
 			}
 		});
 		botonLogout.setBounds(28, 272, 153, 23);
@@ -105,16 +108,10 @@ public class Principal extends JPanel {
 		lblContrasea.setBounds(28, 118, 109, 14);
 		add(lblContrasea);
 		
-		/*vista.getMntmDelincuentes().addActionListener(new ActionListener(){
-			public void actionPerformed(ActionEvent e){
-				if(validado==false){
-					Object[] options = { "OK", "CANCEL" };
-					JOptionPane.showOptionDialog(null, "Introduce contraseña", "ERROR",
-					JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE,
-					null, options, options[0]);
-				}
-			}
-		});*/
-
+	}
+	
+	public boolean estaValidado()
+	{
+		return this.validado;
 	}
 }

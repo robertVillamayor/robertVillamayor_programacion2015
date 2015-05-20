@@ -1,10 +1,13 @@
 package Vista;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Iterator;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -18,9 +21,9 @@ public class Principal extends JPanel {
 	private JLabel lblUsuario,lblContrasea; 
 	private ModeloUsuarios usuarios;
 
-
+	boolean validado=false;
 	
-	public Principal() {
+	public Principal(VistaApp vista) {
 		
 		usuarios=new ModeloUsuarios();
 
@@ -42,10 +45,55 @@ public class Principal extends JPanel {
 		cajaContraseña.setColumns(10);
 		
 		botonLogin = new JButton("LogIn");
+		botonLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int a = comboBox.getSelectedIndex();
+				String b = cajaContraseña.getText();
+				String contraseña1 = usuarios.getDatos(0,2);
+				String contraseña2 = usuarios.getDatos(1, 2);
+				if(a==0){
+					if(b.compareTo(contraseña1)==0){
+						System.out.println("VALIDO");
+						botonLogin.setEnabled(false);
+						botonLogout.setEnabled(true);
+						validado=true;
+					}else{
+						System.out.println("NO VALIDO");
+						Object[] options = { "OK", "CANCEL" };
+						JOptionPane.showOptionDialog(null, "Introduce contraseña", "ERROR",
+						JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE,
+						null, options, options[0]);
+					}
+				}
+				
+				if(a==1){
+					if(b.compareTo(contraseña2)==0){
+						System.out.println("VALIDO");
+						botonLogin.setEnabled(false);
+						botonLogout.setEnabled(true);
+						validado=true;
+					}else{
+						System.out.println("NO VALIDO");
+						Object[] options = { "OK", "CANCEL" };
+						JOptionPane.showOptionDialog(null, "Introduce contraseña", "ERROR",
+						JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE,
+						null, options, options[0]);
+					}
+				}
+			}
+		});
 		botonLogin.setBounds(28, 220, 153, 23);
 		add(botonLogin);
 		
 		botonLogout = new JButton("LogOut");
+		botonLogout.setEnabled(false);
+		botonLogout.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				cajaContraseña.setText("");
+				botonLogin.setEnabled(true);
+				botonLogout.setEnabled(false);
+			}
+		});
 		botonLogout.setBounds(28, 272, 153, 23);
 		add(botonLogout);
 		
@@ -56,6 +104,17 @@ public class Principal extends JPanel {
 		lblContrasea = new JLabel("Contrase\u00F1a:");
 		lblContrasea.setBounds(28, 118, 109, 14);
 		add(lblContrasea);
+		
+		/*vista.getMntmDelincuentes().addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				if(validado==false){
+					Object[] options = { "OK", "CANCEL" };
+					JOptionPane.showOptionDialog(null, "Introduce contraseña", "ERROR",
+					JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE,
+					null, options, options[0]);
+				}
+			}
+		});*/
 
 	}
 }

@@ -30,13 +30,11 @@ public class Delincuentes extends JPanel {
 	private JLabel lblSexo,lblEdad,lblDireccion,lblNacionalidad,lblNombre,lblPoblacion,lblNewLabel;
 	
 	private ModeloDelincuentes delincuentes;
-	private Antecedentes antecedentes;
 	
 
-	public Delincuentes() {
+	public Delincuentes(VistaApp vista) {
 		
 		delincuentes=new ModeloDelincuentes();
-		antecedentes=new Antecedentes();
 		
 		
 		setLayout(null);
@@ -126,7 +124,8 @@ public class Delincuentes extends JPanel {
 						cajaDireccion.setText(delincuentes.getDatos(0, 5));
 						cajaPoblacion.repaint();
 						cajaPoblacion.setText(delincuentes.getDatos(0, 6));
-						antecedentes.getCaja().setText("hola");
+						vista.getAntecedentes().getCaja().repaint();
+						vista.getAntecedentes().getCaja().setText(delincuentes.getDatos(0, 7));
 					}
 					if(a==2){
 						cajaNombre.repaint();
@@ -141,6 +140,8 @@ public class Delincuentes extends JPanel {
 						cajaDireccion.setText(delincuentes.getDatos(1, 5));
 						cajaPoblacion.repaint();
 						cajaPoblacion.setText(delincuentes.getDatos(1, 6));
+						vista.getAntecedentes().getCaja().repaint();
+						vista.getAntecedentes().getCaja().setText(delincuentes.getDatos(1, 7));
 					}
 					if(a==3){
 						cajaNombre.repaint();
@@ -155,6 +156,8 @@ public class Delincuentes extends JPanel {
 						cajaDireccion.setText(delincuentes.getDatos(2, 5));
 						cajaPoblacion.repaint();
 						cajaPoblacion.setText(delincuentes.getDatos(2, 6));
+						vista.getAntecedentes().getCaja().repaint();
+						vista.getAntecedentes().getCaja().setText(delincuentes.getDatos(2, 7));
 					}
 					if(a==0){
 						cajaNombre.setText("");
@@ -163,6 +166,7 @@ public class Delincuentes extends JPanel {
 						cajaNacionalidad.setText("");
 						cajaDireccion.setText("");
 						cajaPoblacion.setText("");
+						vista.getAntecedentes().getCaja().setText("");
 					}
 					
 				}

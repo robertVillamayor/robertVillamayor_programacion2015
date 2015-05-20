@@ -20,7 +20,6 @@ public class ModeloDelincuentes {
 		private static String ANTECEDENTES = "antecedentes";
 		
 		private ArrayList<String[]> datos;
-		private String nombreDatos [];
 		private String titulos[]={ID,NOMBRE,EDAD,SEXO,NACIONALIDAD,DIRECCION,POBLACION,ANTECEDENTES};
 		private ArrayList<Object> personas=null;
 		
@@ -35,7 +34,6 @@ public class ModeloDelincuentes {
 		public ModeloDelincuentes() {
 			
 			
-			String nombreDatos[]=new String[3];
 			conexion=ConexionDB.getConexion();
 			personas=new ArrayList<Object>();
 			datos=new ArrayList<String[]>();

@@ -18,6 +18,9 @@ public class ModeloUsuarios {
 		private ArrayList<Object> id=null;
 		private ArrayList<Object> pass=null;
 		
+		private ArrayList<String[]> datos;
+		private String titulos[]={ID,USUARIO,PASS};
+		
 		
 		private ConexionDB conex;
 
@@ -28,27 +31,37 @@ public class ModeloUsuarios {
 		ResultSet conjuntoResultados=null;
 		
 		public ModeloUsuarios() {
+			
+			datos=new ArrayList<String[]>();
 			conexion=ConexionDB.getConexion();
 			usuarios=new ArrayList<Object>();
 			id=new ArrayList<Object>();
 			pass=new ArrayList<Object>();
+			usuario();
 		}
 		
-		//METODO QUE NOS DEVUELVE UN ARRAY LIST DE LA CONSULTA DE DATOS,EN ESTE CASO EL ID
-		public ArrayList getId( ){
+		
+public void usuario(){
+			
 			try{
+				datos=new ArrayList <String[]>();
 				instruccion=conexion.createStatement();
 				conjuntoResultados=instruccion.executeQuery(LISTADO_USUARIOS);
 				
-				//LISTAREMOS POR PANTALLA LOS DATOS
+				
 				while(conjuntoResultados.next()){
-					id.add(conjuntoResultados.getInt(ID));
+					String x[]=new String[titulos.length];
+					
+						for(int f=0;f<titulos.length;f++){
+							x[f]=conjuntoResultados.getString(titulos[f]);
+						}
+						
+					datos.add(x);
 				}
-				return id;
 			}
 			catch(SQLException sqlException){
 				sqlException.printStackTrace();
-				return id;
+				
 			}
 			finally{
 				try{
@@ -88,31 +101,10 @@ public class ModeloUsuarios {
 			}
 		}
 		
-		//METODO QUE NOS DEVUELVE UN ARRAY LIST DE LA CONSULTA DE DATOS,EN ESTE CASO EL PASSWORD
-		public ArrayList getPass(){
-			try{
-				instruccion=conexion.createStatement();
-				conjuntoResultados=instruccion.executeQuery(LISTADO_USUARIOS);
-				
-				//LISTAREMOS POR PANTALLA LOS DATOS
-				while(conjuntoResultados.next()){
-					pass.add(conjuntoResultados.getString(PASS));
-				}
-				return pass;
-			}
-			catch(SQLException sqlException){
-				sqlException.printStackTrace();
-				return pass;
-			}
-			finally{
-				try{
-					instruccion.close();
-					conjuntoResultados.close();
-				}
-				catch(SQLException sqlException){
-					sqlException.printStackTrace();
-				}
-			}
+
+		
+		public String  getDatos(int x,int y){
+			return datos.get(x)[y];
 		}
 
 

@@ -28,8 +28,8 @@ public class VistaApp extends JFrame {
 	public VistaApp() {
 		
 		contentPane=new JPanel();
-		principal=new Principal();
-		delincuentes=new Delincuentes();
+		principal=new Principal(this);
+		delincuentes=new Delincuentes(this);
 		antecedentes=new Antecedentes();
 		
 		setResizable(false);
@@ -84,14 +84,13 @@ public class VistaApp extends JFrame {
 		
 
 	}
-	public Principal getPrincipal() {
-		return principal;
-	}
 
 
-	public Delincuentes getDelincuentes() {
-		return delincuentes;
+
+	public JMenuItem getMntmDelincuentes() {
+		return mntmDelincuentes;
 	}
+
 
 
 	public Antecedentes getAntecedentes() {

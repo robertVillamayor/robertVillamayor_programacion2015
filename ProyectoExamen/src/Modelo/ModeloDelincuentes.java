@@ -1,6 +1,7 @@
 package Modelo;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -16,12 +17,17 @@ public class ModeloDelincuentes {
 		private static String SEXO = "sexo";
 		private static String NACIONALIDAD = "nacionalidad";
 		private static String DIRECCION = "direccion";
+	
+
+
 		private static String POBLACION = "poblacion";
 		private static String ANTECEDENTES = "antecedentes";
 		
 		private ArrayList<String[]> datos;
 		private String titulos[]={ID,NOMBRE,EDAD,SEXO,NACIONALIDAD,DIRECCION,POBLACION,ANTECEDENTES};
 		private ArrayList<Object> personas=null;
+		
+		private static String UPDATE = "update delincuentes set" +ANTECEDENTES+ "=? where antecedentes"+"=?";
 		
 		private ConexionDB conex;
 
@@ -100,6 +106,17 @@ public class ModeloDelincuentes {
 			}
 		}
 		
+		/*public void updateJuego(){
+			try{
+				PreparedStatement pst = conexion.prepareStatement(UPDATE);
+				pst.setString(7, ANTECEDENTES);
+				pst.executeUpdate();
+				
+				
+			}catch(SQLException s){
+				s.printStackTrace();
+			}
+		}*/
 		
 		
 		public String  getDatos(int x,int y){
@@ -107,4 +124,5 @@ public class ModeloDelincuentes {
 		}
 		
 
+		
 }

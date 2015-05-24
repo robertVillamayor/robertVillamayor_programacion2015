@@ -16,10 +16,14 @@ public class Antecedentes extends JPanel {
 	private JLabel lblNewLabel ;
 	private JButton btnSalvar ;	
 	
+	private ModeloDelincuentes delincuentes;
+	
 	
 
 
 	public Antecedentes() {
+		
+		delincuentes=new ModeloDelincuentes();
 		
 		setLayout(null);
 		
@@ -32,6 +36,11 @@ public class Antecedentes extends JPanel {
 		add(lblNewLabel);
 		
 		btnSalvar = new JButton("Salvar >>");
+		btnSalvar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				//delincuentes.updateJuego();
+			}
+		});
 		btnSalvar.setBounds(24, 285, 89, 23);
 		add(btnSalvar);
 		
